@@ -84,3 +84,12 @@ app.post('/getEvent',jwtmiddleware,(req,res)=>{
         res.status(result.statusCode).json(result)
     })
 })
+
+
+// removeEvent API
+app.post('/removeEvent',jwtmiddleware,(req,res)=>{
+    dataservice.removeEvent(req,req.k)
+    .then(result=>{
+        res.status(result.statusCode).json(result)
+    })
+})
